@@ -16,6 +16,9 @@
         "orchestra/testbench": "^9.1",
         "laravel/legacy-factories": "^1.1"
     },
+    "require": {
+        "laravel/framework": "^10.10"
+    },
     "scripts": {
         "post-autoload-dump": [
             "@clear",
