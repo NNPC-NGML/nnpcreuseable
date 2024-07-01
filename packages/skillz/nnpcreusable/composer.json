@@ -1,0 +1,30 @@
+{
+    "name": "skillz/nnpcreusable",
+    "description": "nnpc reusable services",
+    "autoload": {
+        "psr-4": {
+            "Skillz\\Nnpcreusable\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kingsley achumie",
+            "email": "kingsonly13c@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^9.1",
+        "laravel/legacy-factories": "^1.1"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+       
+        
+        "test": [
+            "@php vendor/bin/phpunit"
+        ]
+    }
+}
