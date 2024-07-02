@@ -19,6 +19,10 @@ class NnpcreusableProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/nnpcreusable.php',
+            'nnpcreusable'
+        );
         $this->commands([
             NnpcreusableDomainComponents::class,
         ]);
@@ -32,6 +36,7 @@ class NnpcreusableProvider extends ServiceProvider
     public function boot()
     {
         //$this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+
         $this->publishes([
             __DIR__ . '/../config/nnpcreusable.php' => config_path('nnpcreusable.php'),
         ], 'config');
