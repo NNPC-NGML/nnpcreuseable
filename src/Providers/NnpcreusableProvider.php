@@ -19,10 +19,10 @@ class NnpcreusableProvider extends ServiceProvider
      */
     public function register()
     {
-        // $this->mergeConfigFrom(
-        //     __DIR__ . '/../config/nnpcreusable.php',
-        //     'nnpcreusable'
-        // );
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/nnpcreusable.php',
+            'nnpcreusable'
+        );
         $this->commands([
             NnpcreusableDomainComponents::class,
         ]);
