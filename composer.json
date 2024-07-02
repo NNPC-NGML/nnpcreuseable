@@ -29,7 +29,8 @@
     "scripts": {
         "post-autoload-dump": [
             "@clear",
-            "@prepare"
+            "@prepare",
+             "@php artisan vendor:publish --provider=\"Skillz\\Nnpcreusable\\Providers\\NnpcreusableServiceProvider\" --tag=config"
         ],
        
         
