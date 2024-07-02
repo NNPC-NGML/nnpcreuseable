@@ -72,9 +72,9 @@ class NnpcreusableDomainComponents extends Command
             "{$this->packagePath}Jobs/Unit/UnitDeleted.php" => app_path('Jobs/Unit/UnitDeleted.php'),
 
             // Load Designations jobs on host app
-            "{$this->packagePath}Jobs/Designations/DesignationsCreated.php" => app_path('Jobs/Designations/DesignationsCreated.php'),
-            "{$this->packagePath}Jobs/Designations/DesignationsUpdated.php" => app_path('Jobs/Designations/DesignationsUpdated.php'),
-            "{$this->packagePath}Jobs/Designations/DesignationsDeleted.php" => app_path('Jobs/Designations/DesignationsDeleted.php'),
+            "{$this->packagePath}Jobs/Designation/DesignationCreated.php" => app_path('Jobs/Designation/DesignationCreated.php'),
+            "{$this->packagePath}Jobs/Designation/DesignationUpdated.php" => app_path('Jobs/Designation/DesignationUpdated.php'),
+            "{$this->packagePath}Jobs/Designation/DesignationDeleted.php" => app_path('Jobs/Designation/DesignationDeleted.php'),
 
         ];
 
