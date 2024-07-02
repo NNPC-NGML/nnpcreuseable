@@ -6,6 +6,13 @@
             "Skillz\\Nnpcreusable\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Skillz\\Nnpcreusable\\Providers\\NnpcreusableServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "kingsley achumie",
