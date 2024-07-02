@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs\Department;
+namespace App\Jobs\Customer;
 
 use Skillz\Nnpcreusable\Models\Customer;
 use Illuminate\Bus\Queueable;

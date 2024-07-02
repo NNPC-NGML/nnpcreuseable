@@ -1,6 +1,6 @@
 <?php
 
-namespace Skillz\Nnpcreusable\Jobs\ProcessFlow;
+namespace App\Jobs\ProcessFlow;
 
 use Illuminate\Http\Request;
 use Illuminate\Bus\Queueable;

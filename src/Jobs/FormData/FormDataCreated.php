@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs\Formbuilder;
+namespace App\Jobs\FormData;
 
 use Illuminate\Bus\Queueable;
 use Skillz\Nnpcreusable\Models\Tag;

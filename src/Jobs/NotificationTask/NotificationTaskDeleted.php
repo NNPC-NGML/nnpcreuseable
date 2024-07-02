@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs\Designation;
+namespace App\Jobs\NotificationTask;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\Log;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Skillz\Nnpcreusable\Jobs\Department;
+namespace App\Jobs\Department;
 
 use Illuminate\Bus\Queueable;
 use Skillz\Nnpcreusable\Service\DepartmentService;

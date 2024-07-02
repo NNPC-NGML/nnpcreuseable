@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs\User;
+namespace App\Jobs\Tag;
 
 
 use Illuminate\Http\Request;

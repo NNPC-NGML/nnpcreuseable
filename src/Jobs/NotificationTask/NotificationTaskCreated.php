@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs\Designation;
+namespace App\Jobs\NotificationTask;
 
 // use App\Models\Designation;
 use Illuminate\Bus\Queueable;
