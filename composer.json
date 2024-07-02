@@ -9,7 +9,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Skillz\\Nnpcreusable\\Providers\\NnpcreusableServiceProvider"
+                "Skillz\\Nnpcreusable\\Providers\\NnpcreusableProvider"
             ]
         }
     },
@@ -30,7 +30,7 @@
         "post-autoload-dump": [
             "@clear",
             "@prepare",
-             "@php artisan vendor:publish --provider=\"Skillz\\Nnpcreusable\\Providers\\NnpcreusableServiceProvider\" --tag=config"
+             "@php artisan vendor:publish --provider=\"Skillz\\Nnpcreusable\\Providers\\NnpcreusableProvider\" --tag=config"
         ],
        
         
