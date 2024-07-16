@@ -13,7 +13,7 @@ class NotificationTask extends Model
     const PENDING = 0;
     const DONE = 1;
     protected $guarded = [];
-    private $fillable = [
+    protected $fillable = [
         'id',
         "processflow_history_id",
         "formbuilder_data_id",
