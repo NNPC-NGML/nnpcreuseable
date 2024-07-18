@@ -27,7 +27,7 @@ class TagSeeder extends Seeder
         ];
         foreach ($data as $key => $value) {
             $tags = Tag::create($value);
-            TagCreated::dispatch($tags)->onQueue('form_builder_service');
+            TagCreated::dispatch($tags)->onQueue('formbuilder_queue');
         }
         $allTags = Tag::all();
     }
