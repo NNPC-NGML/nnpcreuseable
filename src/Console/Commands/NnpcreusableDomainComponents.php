@@ -128,9 +128,9 @@ class NnpcreusableDomainComponents extends Command
             "{$this->packagePath}Jobs/ProcessflowStep/ProcessflowStepDeleted.php" => app_path('Jobs/ProcessflowStep/ProcessflowStepDeleted.php'),
 
             // Load ProcessflowStep jobs on host app
-            "{$this->packagePath}Jobs/ProcessFlowHistory/ProcessFlowHistoryCreated.php" => app_path('Jobs/ProcessflowStep/ProcessflowStepCreated.php'),
-            "{$this->packagePath}Jobs/ProcessFlowHistory/ProcessFlowHistoryUpdated.php" => app_path('Jobs/ProcessflowStep/ProcessflowStepUpdated.php'),
-            "{$this->packagePath}Jobs/ProcessFlowHistory/ProcessFlowHistoryDeleted.php" => app_path('Jobs/ProcessflowStep/ProcessflowStepDeleted.php'),
+            "{$this->packagePath}Jobs/ProcessFlowHistory/ProcessFlowHistoryCreated.php" => app_path('Jobs/ProcessFlowHistory/ProcessFlowHistoryCreated.php'),
+            "{$this->packagePath}Jobs/ProcessFlowHistory/ProcessFlowHistoryUpdated.php" => app_path('Jobs/ProcessFlowHistory/ProcessFlowHistoryUpdated.php'),
+            "{$this->packagePath}Jobs/ProcessFlowHistory/ProcessFlowHistoryDeleted.php" => app_path('Jobs/ProcessFlowHistory/ProcessFlowHistoryDeleted.php'),
 
         ];
 
@@ -246,7 +246,7 @@ class NnpcreusableDomainComponents extends Command
             "{$this->packagePath}Jobs/FormData/FormDataUpdated.php" => app_path('Jobs/FormData/FormDataUpdated.php'),
             "{$this->packagePath}Jobs/FormData/FormDataDeleted.php" => app_path('Jobs/FormData/FormDataDeleted.php'),
 
-            "{$this->packagePath}Jobs/Tag/TagDeleted.php" => app_path('Jobs/Tag/TagDeleted.php'),
+            "{$this->packagePath}Jobs/Tag/TagCreated.php" => app_path('Jobs/Tag/TagCreated.php'),
             // Add more files as needed
         ];
 
