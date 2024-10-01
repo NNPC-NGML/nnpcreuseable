@@ -56,6 +56,17 @@ class NnpcreusableDomainComponents extends Command
             "{$this->packagePath}database/migrations/2024_02_21_100401_create_designations_table.php" => database_path('migrations/2024_02_21_100401_create_designations_table.php'),
             "{$this->packagePath}database/migrations/2024_04_02_095718_create_units_table.php" => database_path('migrations/2024_04_02_095718_create_units_table.php'),
             "{$this->packagePath}database/migrations/2024_04_08_194051_create_departments_table.php" => database_path('migrations/2024_04_08_194051_create_departments_table.php'),
+            "{$this->packagePath}database/migrations/2024_01_31_122024_create_locations_table.php" => database_path('migrations/2024_01_31_122024_create_locations_table.php'),
+
+            // head of unit
+            "{$this->packagePath}database/migrations/2024_09_21_194052_create_head_of_units_table.php" => database_path('migrations/2024_09_21_194052_create_head_of_units_table.php'),
+
+            //assinment table
+            "{$this->packagePath}database/migrations/2024_03_11_205614_create_designation_user_table.php" => database_path('migrations/2024_03_11_205614_create_designation_user_table.php'),
+            "{$this->packagePath}database/migrations/2024_02_05_092718_create_department_user_table.php" => database_path('migrations/2024_02_05_092718_create_department_user_table.php'),
+            "{$this->packagePath}database/migrations/2024_02_05_092718_create_unit_user_table.php" => database_path('migrations/2024_02_05_092718_create_unit_user_table.php'),
+            "{$this->packagePath}database/migrations/2024_02_18_063304_create_location_user_table.php" => database_path('migrations/2024_02_18_063304_create_location_user_table.php'),
+
             // Load Users jobs on host app
             "{$this->packagePath}Jobs/User/UserCreated.php" => app_path('Jobs/User/UserCreated.php'),
             "{$this->packagePath}Jobs/User/UserUpdated.php" => app_path('Jobs/User/UserUpdated.php'),
@@ -75,6 +86,35 @@ class NnpcreusableDomainComponents extends Command
             "{$this->packagePath}Jobs/Designation/DesignationCreated.php" => app_path('Jobs/Designation/DesignationCreated.php'),
             "{$this->packagePath}Jobs/Designation/DesignationUpdated.php" => app_path('Jobs/Designation/DesignationUpdated.php'),
             "{$this->packagePath}Jobs/Designation/DesignationDeleted.php" => app_path('Jobs/Designation/DesignationDeleted.php'),
+
+            // Load Location jobs on host app
+            "{$this->packagePath}Jobs/Location/LocationCreated.php" => app_path('Jobs/Location/LocationCreated.php'),
+            "{$this->packagePath}Jobs/Location/LocationUpdated.php" => app_path('Jobs/Location/LocationUpdated.php'),
+            "{$this->packagePath}Jobs/Location/LocationDeleted.php" => app_path('Jobs/Location/LocationDeleted.php'),
+            // Load head of unit jobs on host app
+            "{$this->packagePath}Jobs/HeadOfUnit/HeadOfUnitCreated.php" => app_path('Jobs/HeadOfUnit/HeadOfUnitCreated.php'),
+            "{$this->packagePath}Jobs/HeadOfUnit/HeadOfUnitUpdated.php" => app_path('Jobs/HeadOfUnit/HeadOfUnitUpdated.php'),
+            "{$this->packagePath}Jobs/HeadOfUnit/HeadOfUnitDeleted.php" => app_path('Jobs/HeadOfUnit/HeadOfUnitDeleted.php'),
+
+            // Load DepartmentAssignment jobs on host app
+            "{$this->packagePath}Jobs/DepartmentAssignment/DepartmentAssignmentCreated.php" => app_path('Jobs/DepartmentAssignment/DepartmentAssignmentCreated.php'),
+            "{$this->packagePath}Jobs/DepartmentAssignment/DepartmentAssignmentUpdated.php" => app_path('Jobs/DepartmentAssignment/DepartmentAssignmentUpdated.php'),
+            "{$this->packagePath}Jobs/DepartmentAssignment/DepartmentAssignmentDeleted.php" => app_path('Jobs/DepartmentAssignment/DepartmentAssignmentDeleted.php'),
+
+            // Load DesignationAssignment jobs on host app
+            "{$this->packagePath}Jobs/DesignationAssignment/DesignationAssignmentCreated.php" => app_path('Jobs/DesignationAssignment/DesignationAssignmentCreated.php'),
+            "{$this->packagePath}Jobs/DesignationAssignment/DesignationAssignmentUpdated.php" => app_path('Jobs/DesignationAssignment/DesignationAssignmentUpdated.php'),
+            "{$this->packagePath}Jobs/DesignationAssignment/DesignationAssignmentDeleted.php" => app_path('Jobs/DesignationAssignment/DesignationAssignmentDeleted.php'),
+
+            // Load LocationAssignment jobs on host app
+            "{$this->packagePath}Jobs/LocationAssignment/LocationAssignmentCreated.php" => app_path('Jobs/LocationAssignment/LocationAssignmentCreated.php'),
+            "{$this->packagePath}Jobs/LocationAssignment/LocationAssignmentUpdated.php" => app_path('Jobs/LocationAssignment/LocationAssignmentUpdated.php'),
+            "{$this->packagePath}Jobs/LocationAssignment/LocationAssignmentDeleted.php" => app_path('Jobs/LocationAssignment/LocationAssignmentDeleted.php'),
+
+            // Load UnitAssignment jobs on host app
+            "{$this->packagePath}Jobs/UnitAssignment/UnitAssignmentCreated.php" => app_path('Jobs/UnitAssignment/UnitAssignmentCreated.php'),
+            "{$this->packagePath}Jobs/UnitAssignment/UnitAssignmentUpdated.php" => app_path('Jobs/UnitAssignment/UnitAssignmentUpdated.php'),
+            "{$this->packagePath}Jobs/UnitAssignment/UnitAssignmentDeleted.php" => app_path('Jobs/UnitAssignment/UnitAssignmentDeleted.php'),
 
         ];
 
@@ -613,89 +653,112 @@ class NnpcreusableDomainComponents extends Command
 
     protected function bindUsersJobs()
     {
-        \App::bindMethod('App\\Jobs\\User\\UserCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\User\\UserUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\User\\UserDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\User\\UserCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\User\\UserUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\User\\UserDeleted@handle', fn($job) => $job->handle());
 
-        \App::bindMethod('App\\Jobs\\Unit\\UnitCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Unit\\UnitUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Unit\\UnitDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Unit\\UnitCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Unit\\UnitUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Unit\\UnitDeleted@handle', fn($job) => $job->handle());
 
-        \App::bindMethod('App\\Jobs\\Department\\DepartmentCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Department\\DepartmentUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Department\\DepartmentDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Department\\DepartmentCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Department\\DepartmentUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Department\\DepartmentDeleted@handle', fn($job) => $job->handle());
 
-        \App::bindMethod('App\\Jobs\\Designation\\DesignationCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Designation\\DesignationUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Designation\\DesignationDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Designation\\DesignationCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Designation\\DesignationUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Designation\\DesignationDeleted@handle', fn($job) => $job->handle());
 
+        \App::bindMethod('App\\Jobs\\DepartmentAssignment\\DepartmentAssignmentCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\DepartmentAssignment\\DepartmentAssignmentUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\DepartmentAssignment\\DepartmentAssignmentDeleted@handle', fn($job) => $job->handle());
+
+
+        \App::bindMethod('App\\Jobs\\DesignationAssignment\\DesignationAssignmentCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\DesignationAssignment\\DesignationAssignmentUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\DesignationAssignment\\DesignationAssignmentDeleted@handle', fn($job) => $job->handle());
+
+
+        \App::bindMethod('App\\Jobs\\HeadOfUnit\\HeadOfUnitCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\HeadOfUnit\\HeadOfUnitUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\HeadOfUnit\\HeadOfUnitDeleted@handle', fn($job) => $job->handle());
+
+
+        \App::bindMethod('App\\Jobs\\LocationAssignment\\LocationAssignmentCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\LocationAssignment\\LocationAssignmentUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\LocationAssignment\\LocationAssignmentDeleted@handle', fn($job) => $job->handle());
+
+
+        \App::bindMethod('App\\Jobs\\UnitAssignment\\UnitAssignmentCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\UnitAssignment\\UnitAssignmentUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\UnitAssignment\\UnitAssignmentDeleted@handle', fn($job) => $job->handle());
 
         $this->info("Users Jobs have been bound successfully.");
     }
     protected function bindProcessFlowJobs()
     {
         // Bind methods for the ProcessFlow jobs
-        \App::bindMethod('App\\Jobs\\ProcessFlow\\ProcessFlowCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\ProcessFlow\\ProcessFlowUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\ProcessFlow\\ProcessFlowDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessFlow\\ProcessFlowCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessFlow\\ProcessFlowUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessFlow\\ProcessFlowDeleted@handle', fn($job) => $job->handle());
         // Bind methods for the ProcessFlowHistory jobs
-        \App::bindMethod('App\\Jobs\\ProcessFlowHistory\\ProcessFlowHistoryCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\ProcessFlowHistory\\ProcessFlowHistoryUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\ProcessFlowHistory\\ProcessFlowHistoryDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessFlowHistory\\ProcessFlowHistoryCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessFlowHistory\\ProcessFlowHistoryUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessFlowHistory\\ProcessFlowHistoryDeleted@handle', fn($job) => $job->handle());
         // Bind methods for the ProcessflowStep jobs
-        \App::bindMethod('App\\Jobs\\ProcessflowStep\\ProcessflowStepCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\ProcessflowStep\\ProcessflowStepUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\ProcessflowStep\\ProcessflowStepDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessflowStep\\ProcessflowStepCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessflowStep\\ProcessflowStepUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\ProcessflowStep\\ProcessflowStepDeleted@handle', fn($job) => $job->handle());
         // Bind methods for the Route jobs
-        \App::bindMethod('App\\Jobs\\Route\\RouteCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Route\\RouteUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Route\\RouteDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Route\\RouteCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Route\\RouteUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Route\\RouteDeleted@handle', fn($job) => $job->handle());
 
         $this->info("Processflow Jobs have been bound successfully.");
     }
     protected function bindNotificationTaskJobs()
     {
         // Bind methods for the ProcessFlow jobs
-        \App::bindMethod('App\\Jobs\\NotificationTask\\NotificationTaskCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\NotificationTask\\NotificationTaskUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\NotificationTask\\NotificationTaskDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\NotificationTask\\NotificationTaskCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\NotificationTask\\NotificationTaskUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\NotificationTask\\NotificationTaskDeleted@handle', fn($job) => $job->handle());
 
         $this->info("Notification Jobs have been bound successfully.");
     }
     protected function bindAutomatorTaskJobs()
     {
         // Bind methods for the ProcessFlow jobs
-        \App::bindMethod('App\\Jobs\\AutomatorTask\\AutomatorTaskCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\AutomatorTask\\AutomatorTaskUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\AutomatorTask\\AutomatorTaskDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\AutomatorTask\\AutomatorTaskCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\AutomatorTask\\AutomatorTaskUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\AutomatorTask\\AutomatorTaskDeleted@handle', fn($job) => $job->handle());
 
         $this->info("Automator Jobs have been bound successfully.");
     }
     protected function bindFormBuilderJobs()
     {
         // Bind methods for the ProcessFlow jobs
-        \App::bindMethod('App\\Jobs\\FormBuilder\\FormBuilderCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\FormBuilder\\FormBuilderUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\FormBuilder\\FormBuilderDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\FormBuilder\\FormBuilderCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\FormBuilder\\FormBuilderUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\FormBuilder\\FormBuilderDeleted@handle', fn($job) => $job->handle());
 
-        \App::bindMethod('App\\Jobs\\FormData\\FormDataCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\FormData\\FormDataUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\FormData\\FormDataDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\FormData\\FormDataCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\FormData\\FormDataUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\FormData\\FormDataDeleted@handle', fn($job) => $job->handle());
 
-        \App::bindMethod('App\\Jobs\\Tag\\TagCreated@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Tag\\TagCreated@handle', fn($job) => $job->handle());
 
         $this->info("Formbuilder Jobs have been bound successfully.");
     }
     protected function bindCustomerJobs()
     {
         // Bind methods for the ProcessFlow jobs
-        \App::bindMethod('App\\Jobs\\Customer\\CustomerCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Customer\\CustomerUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\Customer\\CustomerDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Customer\\CustomerCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Customer\\CustomerUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\Customer\\CustomerDeleted@handle', fn($job) => $job->handle());
 
-        \App::bindMethod('App\\Jobs\\CustomerSite\\CustomerSiteCreated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\CustomerSite\\CustomerSiteUpdated@handle', fn ($job) => $job->handle());
-        \App::bindMethod('App\\Jobs\\CustomerSite\\CustomerSiteDeleted@handle', fn ($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\CustomerSite\\CustomerSiteCreated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\CustomerSite\\CustomerSiteUpdated@handle', fn($job) => $job->handle());
+        \App::bindMethod('App\\Jobs\\CustomerSite\\CustomerSiteDeleted@handle', fn($job) => $job->handle());
 
         $this->info("Customer Jobs have been bound successfully.");
     }

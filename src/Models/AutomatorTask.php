@@ -11,18 +11,15 @@ class AutomatorTask extends Model
 
     protected $fillable = [
         "id",
-        "title",
         "processflow_history_id",
         "formbuilder_data_id",
+        "entity",
+        "entity_id",
+        "entity_site_id",
         "user_id",
         "processflow_id",
         "processflow_step_id",
-        "task_status",
-        "entity_id",
-        "entity_type",
-        "start_time",
-        "end_time",
-        "route",
+        "assignment_status",
         "task_status",
     ];
 }

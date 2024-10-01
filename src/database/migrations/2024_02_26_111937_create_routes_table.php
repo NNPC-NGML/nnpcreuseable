@@ -15,6 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id')->primary();
             $table->string("name")->comment("this is the route name");
             $table->string("link")->comment("this is the route link");
+            $table->text("dynamic_content")->comment("this holds dynamic content like customer_id customer_site_id etc");
             $table->boolean("status")->comment("this indicates if the route is active or not ");
             $table->timestamps();
         });

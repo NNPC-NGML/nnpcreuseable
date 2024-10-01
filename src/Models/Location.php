@@ -5,14 +5,8 @@ namespace Skillz\Nnpcreusable\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Routes extends Model
+class Location extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        "id",
-        'name',
-        'dynamic_content',
-        'link',
-        'status',
-    ];
+    protected $guarded = [];
 }
