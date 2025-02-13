@@ -17,11 +17,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'id',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'status',
+    //     'id',
+    // ];
+    protected $guarded = [];
 
     public function department(): HasOne
     {

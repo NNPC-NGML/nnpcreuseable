@@ -8,14 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class ProcessFlowHistory extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        "id",
-        'user_id',
-        'task_id',
-        'process_flow_id',
-        'step_id',
-        'status',
-    ];
+    protected $guarded = [];
+    // protected $fillable = [
+    //     "id",
+    //     'user_id',
+    //     'task_id',
+    //     'process_flow_id',
+    //     'step_id',
+    //     'status',
+    // ];
 
     protected $casts = [
         'status' => 'boolean'

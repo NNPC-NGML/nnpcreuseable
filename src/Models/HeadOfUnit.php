@@ -9,10 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 class HeadOfUnit extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        "id",
-        "user_id",
-        "location_id",
-        "unit_id",
-    ];
+    protected $guarded = [];
+    // protected $fillable = [
+    //     "id",
+    //     "user_id",
+    //     "location_id",
+    //     "unit_id",
+    // ];
 }

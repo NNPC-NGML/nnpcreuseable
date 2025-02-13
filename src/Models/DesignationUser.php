@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class DesignationUser extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        "id",
-        "user_id",
-        "designation_id",
-    ];
+    protected $guarded = [];
+    // protected $fillable = [
+    //     "id",
+    //     "user_id",
+    //     "designation_id",
+    // ];
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'id',
         "company_name",
@@ -17,4 +18,5 @@ class Customer extends Model
         "created_by_user_id",
         'status',
     ];
+    protected $guarded = [];
 }

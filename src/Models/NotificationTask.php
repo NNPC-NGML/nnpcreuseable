@@ -13,21 +13,21 @@ class NotificationTask extends Model
     const PENDING = 0;
     const DONE = 1;
     protected $guarded = [];
-    protected $fillable = [
-        'id',
-        "processflow_history_id",
-        "formbuilder_data_id",
-        "entity_id",
-        "entity_type",
-        "user_id",
-        "processflow_id",
-        "processflow_step_id",
-        "title",
-        "route",
-        "start_time",
-        "end_time",
-        "task_status",
-    ];
+    // protected $fillable = [
+    //     'id',
+    //     "processflow_history_id",
+    //     "formbuilder_data_id",
+    //     "entity_id",
+    //     "entity_type",
+    //     "user_id",
+    //     "processflow_id",
+    //     "processflow_step_id",
+    //     "title",
+    //     "route",
+    //     "start_time",
+    //     "end_time",
+    //     "task_status",
+    // ];
 
 
     /**

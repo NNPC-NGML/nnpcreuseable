@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Routes extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        "id",
-        'name',
-        'dynamic_content',
-        'link',
-        'status',
-    ];
+    protected $guarded = [];
+    // protected $fillable = [
+    //     "id",
+    //     'name',
+    //     'dynamic_content',
+    //     'link',
+    //     'status',
+    // ];
 }

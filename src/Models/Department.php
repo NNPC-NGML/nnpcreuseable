@@ -10,10 +10,10 @@ class Department extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $fillable = [
-        'id',
-        'name',
-    ];
+    // protected $fillable = [
+    //     'id',
+    //     'name',
+    // ];
 
     public function units()
     {

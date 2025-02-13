@@ -19,12 +19,7 @@ class DesignationService
     {
         // Validate the input data
         $this->validateData($data);
-        return Designation::create([
-            'id' => $data['id'],
-            'name' => $data['name'],
-            'created_at' => $data['created_at'],
-            'updated_at' => $data['updated_at'],
-        ]);
+        return Designation::create($data);
     }
 
     /**
@@ -38,7 +33,7 @@ class DesignationService
     {
         $validator = Validator::make($data, [
             'id' => 'required',
-            'name' => 'required|string|max:255',
+            'role' => 'required|string|max:255',
             'created_at' => 'nullable|date',
             'updated_at' => 'nullable|date',
         ]);

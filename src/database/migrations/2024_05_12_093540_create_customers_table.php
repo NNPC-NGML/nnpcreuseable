@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("company_name")->comment();
             $table->string('email')->unique()->comment();
             $table->string('phone_number')->comment();
-            $table->string('password')->comment();
+            $table->string('password')->nullable()->comment();
             $table->integer("created_by_user_id")->comment();
             $table->boolean('status')->default(0)->comment();
             $table->timestamps();
